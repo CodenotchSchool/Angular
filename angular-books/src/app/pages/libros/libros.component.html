@@ -1,0 +1,50 @@
+<main>
+    <div class="libros" *ngIf="libros.length > 0; else sinLibros">
+        <div class="card" style="width: 18rem; height: 46rem;"  *ngFor="let libro of libros; let par = even;">
+            <img class="card-img-top" src="{{libro.photo}}" style="width: 18rem; height: 26rem;" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{libro.titulo}}</h5>
+            </div>
+            <ul class="list-group ">
+              <li class="list-group-item">Autor: {{libro.autor}}</li>
+              <li class="list-group-item">Tipo: {{libro.tipoLibro}}</li>
+              <li class="list-group-item">Precio: {{libro.precio}}€</li>
+              <li class="list-group-item">{{libro.id_libro | ref}}</li>
+            </ul>
+            <div class="card-body">
+                <button class="btn" [ngClass]="par ? 'boton1': 'boton2'">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #sinLibros>
+        <p>
+            No tienes libros en tu colección
+        </p>
+    </ng-template>
+
+
+    <form>
+        <h2>Nuevo Libro</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #titulo placeholder="Título">
+        </div>
+        <div class="form-group">
+            <select class="form-control" #tipo>
+                <option>Tapa dura</option>
+                <option>Tapa blanda</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #autor placeholder="Autor">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" id="exampleInputPassword1" #precio placeholder="Precio">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputPassword1" #foto placeholder="Foto">
+        </div>
+        <button type="reset" on-click="pushLibro(titulo.value,tipo.value,autor.value,precio.value,foto.value)" class="btn">Añadir</button>
+    </form>
+    
+</main>

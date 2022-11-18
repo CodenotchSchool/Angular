@@ -5,7 +5,7 @@ export class Usuario {
     public correo: string
     public url: string
     public password: string
-    constructor(id_usuario: number, nombre: string, apellidos: string, 
+    constructor(id_usuario: number = 0, nombre: string, apellidos: string, 
         correo: string, url: string, password: string){
 
             this.id_usuario = id_usuario;
