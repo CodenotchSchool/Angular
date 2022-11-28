@@ -6,6 +6,32 @@ main{
     align-items: center;
     justify-content: center;
 }
+
+.buscador{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 60px;
+    padding: 20px;
+
+}
+
+.buscador input[type="number"]{
+    width: 200px;
+    padding: 6px;
+    border: none;
+}
+
+.buscador button{
+    width: 200px;
+    border: none;
+    padding: 6px;
+    color: var(--tertiary);
+    background: var(--primary);
+}
+
 .libros{
     display: flex;
     flex-wrap: wrap;
@@ -17,8 +43,29 @@ main{
 .card{
     border: none;
     box-shadow: 30px 30px 20px rgba(0,0,0,0.3);
+    position: relative;
 }
 
+.delete--button{
+    position: absolute;
+    text-align: center;
+    background: var(--black);
+    height: 36px;
+    width: 36px;
+    padding: 4px;
+    border-radius: 50%;
+    border: none;
+    top: 1%;
+    left: 80%;
+    color: var(--tertiary);
+    font-size: larger;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.delete--button:hover{
+    opacity: 1;
+}
 .card-body{
     height: 14px;
 }
@@ -51,26 +98,3 @@ p{
     color: var(--black);
 }
 
-form{
-    background: var(--white);
-    padding: 24px;
-    width: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 30px 30px 20px rgba(0,0,0,0.3);
-    margin-bottom: 50px;
-}
-.form-group{
-    width: 100%;
-}
-#exampleFormControlSelect1{
-    width: 100%;
-}
-
-form button{
-    background: var(--primary);
-    color: var(--tertiary);
-}
