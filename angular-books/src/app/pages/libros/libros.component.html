@@ -1,15 +1,15 @@
 <main>
 
+    <div class="buscador">
+        <input type="number" #id placeholder="ID del libro a buscar">
+        <button type="reset" on-click="buscar(id)">Buscar</button>
+    </div>
 
     <div class="libros" *ngIf="libros.length > 0; else sinLibros">
         
-        <div class="buscador">
-            <input type="number" #id placeholder="ID del libro a buscar">
-            <button type="reset" on-click="buscar(id)">Buscar</button>
-        </div>
 
         <div class="card" style="width: 18rem; height: 46rem;"  *ngFor="let libro of libros; let par = even;">
-            <img class="card-img-top" src="{{libro.photo}}" style="width: 18rem; height: 26rem;" alt="Card image cap">
+            <img class="card-img-top" src="{{libro.foto}}" style="width: 18rem; height: 26rem;" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{libro.titulo}}</h5>
             </div>

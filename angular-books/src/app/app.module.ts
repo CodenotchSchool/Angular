@@ -13,6 +13,8 @@ import { LibrosComponent } from './pages/libros/libros.component';
 import { RefPipe } from './pipes/ref.pipe';
 import { AddLibroComponent } from './pages/add-libro/add-libro.component';
 import { PutLibroComponent } from './pages/put-libro/put-libro.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { PutLibroComponent } from './pages/put-libro/put-libro.component';
     LibrosComponent,
     RefPipe,
     AddLibroComponent,
-    PutLibroComponent
+    PutLibroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
