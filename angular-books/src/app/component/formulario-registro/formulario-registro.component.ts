@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { RespuestaUsuario } from 'src/app/models/respuesta-usuario';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
@@ -11,18 +12,19 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class FormularioRegistroComponent implements OnInit {
 
+  public usuario: Usuario;
   constructor(public usuarioService:UsuarioService) {
-    
+    this.usuario = new Usuario(0,"","","","","")
    }
 
   ngOnInit(): void {
   }
 
-  registro(nombre:string,apellido:string,correo:string,pass1:string,pass2:string){
-    
-    if(pass1 == pass2){
+  registro(){
+
+    if(this.usuario.password == this.usuario.password2){
       this.usuarioService
-      .register(new Usuario(0,nombre,apellido,correo,"",pass1))
+      .register(this.usuario)
       .subscribe((data:RespuestaUsuario)=>{
         console.log(data);
       })

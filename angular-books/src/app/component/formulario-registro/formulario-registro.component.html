@@ -1,19 +1,40 @@
-<form>
+<form #userForm="ngForm" (ngSubmit) = "registro()">
     <h2>Registro</h2>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Nombre" #nombre>
+        <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="usuario.nombre" name="nombre"
+         #name="ngModel" [ngClass]="{'is-invalid': (name.dirty || name.touched ) && name.invalid}" required>
+         <div *ngIf="(name.dirty || name.touched) && name.invalid" class="invalid-feedback">
+            <p *ngIf="name.errors.required">El nombre es obligatorio</p>
+         </div>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Apellido" #apellido>
+        <input type="text" class="form-control" placeholder="Apellido"  [(ngModel)]="usuario.apellidos" name="apellidos" 
+        #surName="ngModel" [ngClass]="{'is-invalid': (surName.dirty || surName.touched ) && surName.invalid}" required>
+        <div *ngIf="(surName.dirty || surName.touched) && surName.invalid" class="invalid-feedback">
+           <p *ngIf="surName.errors.required">El apellido es obligatorio</p>
+        </div>
     </div>
     <div class="form-group">
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" #email>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"  [(ngModel)]="usuario.correo" name="correo" 
+      #email="ngModel" [ngClass]="{'is-invalid': (email.dirty || email.touched ) && email.invalid}" email required>
+        <div *ngIf="(email.dirty || email.touched) && email.invalid" class="invalid-feedback">
+           <p *ngIf="email.errors.required">El email es obligatorio</p>
+           <p *ngIf="email.errors.email">Introduzca un email válido</p>
+        </div>
     </div>
     <div class="form-group">
-      <input type="password" class="form-control"  placeholder="Contraseña" #pass1>
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control"  placeholder="Repetir contraseña" #pass2>
+      <input type="password" class="form-control"  placeholder="Contraseña"  [(ngModel)]="usuario.password" name="password" 
+      #pass="ngModel" [ngClass]="{'is-invalid': (pass.dirty || pass.touched ) && pass.invalid}" required>
+      <div *ngIf="(pass.dirty || pass.touched) && pass.invalid" class="invalid-feedback">
+         <p *ngIf="pass.errors.required">La contraseña es obligatoria</p>
       </div>
-    <button type="reset" class="btn" (click)="registro(nombre.value,apellido.value,email.value,pass1.value,pass2.value)">Registrarme</button>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control"  placeholder="Repetir contraseña" [(ngModel)]="usuario.password2" name="password2" 
+        #pass2="ngModel" [ngClass]="{'is-invalid': (pass2.dirty || pass2.touched ) && pass2.invalid}" required>
+        <div *ngIf="(pass2.dirty || pass2.touched) && pass2.invalid" class="invalid-feedback">
+           <p *ngIf="pass2.errors.required">Introduzca la contraseña</p>
+        </div>
+      </div>
+    <button class="btn" [disabled]="userForm.invalid">Registrarme</button>
 </form>

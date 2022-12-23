@@ -1,10 +1,11 @@
 export class Usuario {
-    public id_usuario: number
-    public nombre: string
-    public apellidos: string
-    public correo: string
-    public url: string
-    public password: string
+    public id_usuario: number;
+    public nombre: string;
+    public apellidos: string;
+    public correo: string;
+    public url: string;
+    public password: string;
+    public password2: string;
     constructor(id_usuario: number = 0, nombre: string, apellidos: string, 
         correo: string, url: string, password: string){
 
@@ -14,5 +15,6 @@ export class Usuario {
             this.correo = correo;
             this.url = url;
             this.password = password;
+            this.password2 = "";
     }
 }
