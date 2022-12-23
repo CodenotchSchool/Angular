@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem; height: 46rem;">
+    <img class="card-img-top" src="{{libro.foto}}" style="width: 18rem; height: 26rem;" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{libro.titulo}}</h5>
+    </div>
+    <ul class="list-group ">
+      <li class="list-group-item">Autor: {{libro.autor}}</li>
+      <li class="list-group-item">Tipo: {{libro.tipo}}</li>
+      <li class="list-group-item">Precio: {{libro.precio}}€</li>
+      <li class="list-group-item">{{libro.id_libro | ref}}</li>
+    </ul>
+    <div class="card-body">
+        <button class="btn" [ngClass]="par ? 'boton1': 'boton2'">Comprar</button>
+    </div>
+    <button class="delete--button" on-click="borrar(libro.id_libro)">X</button>
+
+</div>

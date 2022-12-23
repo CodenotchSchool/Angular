@@ -16,6 +16,7 @@ import { PutLibroComponent } from './pages/put-libro/put-libro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { CardComponent } from './component/card/card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     RefPipe,
     AddLibroComponent,
     PutLibroComponent,
-    LoginComponent
+    LoginComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

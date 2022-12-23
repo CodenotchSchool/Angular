@@ -1,0 +1,35 @@
+.card{
+    border: none;
+    box-shadow: 30px 30px 20px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.delete--button{
+    position: absolute;
+    text-align: center;
+    background: var(--black);
+    height: 36px;
+    width: 36px;
+    padding: 4px;
+    border-radius: 50%;
+    border: none;
+    top: 1%;
+    left: 80%;
+    color: var(--tertiary);
+    font-size: larger;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.delete--button:hover{
+    opacity: 1;
+}
+.card-body{
+    height: 14px;
+}
+
+p{
+    font-size: x-large;
+    color: var(--black);
+    text-align: center;
+}
