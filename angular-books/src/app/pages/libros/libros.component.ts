@@ -37,16 +37,7 @@ export class LibrosComponent implements OnInit {
   public borrar(id:number){
     
     if(this.librosService.delete(id)){
-      let i = 0;
-
-      while(i<this.libros.length && this.libros[i].id_libro != id){
-        i++;
-      }
-  
-      if(i<this.libros.length){
-        this.libros.splice(i,i+1);
-      }
+      this.libros = this.libros.filter(libro=>libro.id_libro!=id)
     }
-
   }
 }

@@ -45,17 +45,15 @@ export class LibrosService {
   }
 
   public delete(id_libro: number): boolean{
-    let i = 0;
 
-    while(i<this.libros.length && this.libros[i].id_libro != id_libro){
-      i++;
-    }
+    let filtrado:Libro[] = this.libros.filter(libro=>libro.id_libro!=id_libro)
+    let borrado: boolean = false;
 
-    if(i<this.libros.length){
-      this.libros.splice(i,i+1);
-      return true
-    }else{
-      return false;
+    if(filtrado.length<this.libros.length){
+      this.libros = filtrado;
+      borrado =  true
     }
+    
+    return borrado;
   }
 }
