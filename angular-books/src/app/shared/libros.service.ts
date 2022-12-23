@@ -35,23 +35,10 @@ export class LibrosService {
   }
 
   public edit(libro: Libro):Observable<Object>{
-
     return this.http.put(this.url,libro);
   }
 
   public delete(id_libro: number):Observable<Object>{
-  //   let i = 0;
-
-  //   while(i<this.libros.length && this.libros[i].id_libro != id_libro){
-  //     i++;
-  //   }
-
-  //   if(i<this.libros.length){
-  //     this.libros.splice(i,i+1);
-  //     return true
-  //   }else{
-  //     return false;
-  //   }
     return this.http.request('delete',this.url,{body:{id_libro:id_libro}})
   }
 }
