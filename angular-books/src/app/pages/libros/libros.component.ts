@@ -63,13 +63,7 @@ export class LibrosComponent implements OnInit {
         timer: 1500
       })
 
-      let i = 0;
-      while(i<this.libros.length && this.libros[i].id_libro != id){
-        i++;
-      }
-      if(i<this.libros.length){
-        this.libros.splice(i,i+1);
-      }
+      this.libros = this.libros.filter(libro=>libro.id_libro!=id)
     })
 
   }
