@@ -33,3 +33,25 @@ p{
     color: var(--black);
     text-align: center;
 }
+
+.boton1{
+    background: var(--primary);
+    color: var(--white);
+    width: 100%;
+}
+
+.boton1:hover{
+    background: var(--secondary);
+    color: var(--black);
+}
+
+.boton2{
+    background: var(--black);
+    color: var(--tertiary);
+    width: 100%;   
+}
+
+.boton2:hover{
+    background: var(--tertiary);
+    color: var(--black);
+}
